@@ -1,0 +1,135 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}{\f2\fnil\fcharset1 Cambria Math;}{\f3\fnil\fcharset2 Symbol;}}
+{\*\generator Riched20 10.0.19041}{\*\mmathPr\mmathFont2\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs28\lang9                                   \ul MODULE: 4 (JavaScript Basic & DOM)\par
+\par
+\ulnone\b0\fs22\par
+\b\lang1033 1)\b0  \f1\lang9 What is JavaScript? \par
+\ul\b\f0\lang1033 ANS. \ulnone\b0\f1\lang9 JavaScript is a high-level, dynamic, and interpreted programming language that is widely used for creating interactive and dynamic web pages. It is a client-side scripting language that runs on the user's web browser, and it allows developers to add interactive features to their web pages, such as form validation, dynamic content updates, and animations.\par
+\par
+\b\f0\lang1033 2)\b0\f1\lang9  What is the use of isNaN function? \par
+\ul\b\f0\lang1033 ANS.\ulnone\b0\f1\lang9 JavaScript isNaN () Function. The isNaN () function is used to check whether a given value is an illegal number or not. It returns true if value is a NaN else returns false. It is different from the Number.isNaN () Method.\par
+\par
+\b\f0\lang1033 3)\b0\f1\lang9  What is negative Infinity?\par
+ \ul\b\f0\lang1033 ANS.\ulnone\b0\f1\lang9 Infinity is just a concept of endlessness, and can be used to represent numbers going on forever. Negative infinity is the opposite of (positive) infinity, or just negative numbers going on forever. Can negative infinity exist? About Infinity Similarly, there is a concept called negative infinity, which is less than any real number.\par
+\par
+\b\f0\lang1033 4)\b0\f1\lang9  Which company developed JavaScript? \par
+\ul\f0\lang1033 ANS.\ulnone\f1\lang9 JavaScript was developed by Netscape Communications Corporation, a software company that was one of the early pioneers of the internet. Brendan Eich, a programmer at Netscape, created the language in just 10 days in May 1995, originally calling it "Mocha", then "LiveScript", before settling on "JavaScript". The language was developed as a scripting language to add interactivity to web pages in Netscape Navigator, the company's web browser at the time.\par
+\par
+\b\f0\lang1033 5)\b0\f1\lang9  What are undeclared and undefined variables? \par
+\ul\b\caps\f0\lang1033 ANS.\ulnone\b0\caps0\f1\lang9 An undeclared variable is a variable that has not been declared with the var, let, or const keyword. When an undeclared variable is used in a program, JavaScript creates it as a global variable and assigns it the value undefined. This can lead to unintended consequences and is generally considered bad programming practice.\par
+For example:\par
+function foo() \{\par
+  x = 10; // undeclared variable\par
+\}\par
+foo();\par
+console.log(x); // outputs 10\par
+In this example, the variable x is used without being declared, which creates it as a global variable. When the foo() function is called, x is assigned the value 10, and it can be accessed outside the function using console.log(), even though it was never explicitly declared.\par
+On the other hand, an undefined variable is a variable that has been declared but has not been assigned a value. When an undefined variable is used in a program, its value is undefined.\par
+example:\par
+let x; // variable declared but not assigned a value\par
+console.log(x); // outputs undefined\par
+In this example, the variable x is declared with the let keyword, but it is not assigned a value, so its value is undefined by default. When x is used with console.log(), it outputs undefined.\par
+It's important to note that using undeclared or undefined variables can lead to errors and unexpected behavior in JavaScript programs, so it's generally best to declare variables with var, let, or const, and to assign them a value before using them.\par
+\par
+\b\f0\lang1033 6)\b0\f1\lang9  Write the code for adding new elements dynamically? \par
+ \ul\f0\lang1033 ANS.\ulnone\f1\lang9 <html> <head> <title>t1</title> <script type="text/javascript"> function addNode () \{ var newP = document.createElement ("p"); var textNode = document.createTextNode (" This is a new text node");\par
+\par
+\b\f0\lang1033 7)\b0\f1\lang9  What is the difference between ViewState and SessionState? \ul\b\par
+\f0\lang1033 ANS.\ulnone\b0\f1\lang9  ViewState is used to maintain the state of a single page or request on the client-side, while SessionState is used to maintain the state of a user session on the server-side. The choice of which one to use depends on the requirements of the specific web application and the type of data that needs to be stored.\par
+\par
+\b\f0\lang1033 8) \b0\f1\lang9 What is === operator? \par
+\ul\b\f0\lang1033 ANS\ulnone\b0 . However, the === operator performs a strict comparison without type coercion, and it checks whether the values and their types are identical. Since a is a number and b is a string, the === operator returns false.\par
+In general, it is considered a good programming practice to use the === operator for comparisons in JavaScript to avoid unexpected behavior due to type coercion.\par
+\f1\lang9\par
+\b\f0\lang1033 9)\b0\f1\lang9  How can the style/class of an element be changed? \par
+\ul\b\f0\lang1033 ANS.\ulnone\b0\f1\lang9 It can be done in the following way: JavaScript document.getElementById ("myText").style.fontSize = "20?; or document.getElementById ("myText").className = "anyclass";\par
+\par
+\b\f0\lang1033 10) \b0\f1\lang9 How to read and write a file using JavaScript? \par
+\ul\f0\lang1033 ANS.\ulnone\f1\lang9 In modern web browsers, JavaScript provides a File API that allows you to read and write files from a user's local file system using the File and FileReader objects. Here is an example of how to read a text file and display its contents using the FileReader object:\par
+// create a file input element\par
+const fileInput = document.createElement('input');\par
+fileInput.type = 'file';\par
+// add an event listener to handle file selection\par
+fileInput.addEventListener('change', (event) => \{\par
+  const file = event.target.files[0];\par
+  const reader = new FileReader();\par
+  reader.readAsText(file);\par
+\par
+  // add an event listener to handle file loading\par
+  reader.addEventListener('load', (event) => \{\par
+    const fileContent = event.target.result;\par
+    console.log(fileContent);\par
+  \});\par
+\});\par
+// add the file input element to the document body\par
+document.body.appendChild(fileInput);\par
+In this example, we first create a file input element using the createElement() method of the document object. We then add an event listener to the input element that listens for the change event, which is triggered when the user selects a file. In the event listener, we use the FileReader object to read the selected file as text using the readAsText() method. We also add another event listener to the reader object that listens for the load event, which is triggered when the file has finished loading. In the load event listener, we get the contents of the file using the result property of the event target, and then log the file contents to the console.\par
+Here is an example of how to write a text file using the same File API:\par
+// create a new file blob\par
+const fileContent = 'Hello, world!';\par
+const fileBlob = new Blob([fileContent], \{ type: 'text/plain' \});\par
+\par
+// create a download link element\par
+const downloadLink = document.createElement('a');\par
+downloadLink.href = URL.createObjectURL(fileBlob);\par
+downloadLink.download = 'hello.txt';\par
+// simulate a click on the download link to download the file\par
+document.body.appendChild(downloadLink);\par
+downloadLink.click();\par
+document.body.removeChild(downloadLink);\par
+In this example, we first create a file blob object using the Blob() constructor, which allows us to create a new file of the specified content and MIME type. We then create a download link element using the createElement() method and set its href attribute to the URL of the file blob using the createObjectURL() method. We also set the download attribute to the desired filename for the downloaded file. Finally, we simulate a click on the download link using the click() method, which triggers the file download in the user's browser.\par
+\b\f0\lang1033 11)\b0\f1\lang9 What are all the looping structures in JavaScript? \par
+\ul\f0\lang1033 ANS.\ulnone\f1\lang9 for loop: This loop is used to execute a block of code a fixed number of times. It can be used to loop over arrays, strings, or any other collection of values. Here's an example:\par
+\ul cs\f0\lang1033 s\ulnone\f1\lang9\par
+for (let i = 0; i < 10; i++) \{\par
+  console.log(i);\par
+\}\par
+while loop: This loop is used to execute a block of code as long as a specified condition is true. It is often used when the number of iterations is not known in advance. Here's an example:\par
+\ul css\ulnone\par
+let i = 0;\par
+while (i < 10) \{\par
+  console.log(i);\par
+  i++;\par
+\}\par
+do...while loop: This loop is similar to the while loop, but it guarantees that the block of code is executed at least once, even if the condition is false. Here's an example:\par
+\ul javascript\ulnone\par
+let i = 0;\par
+do \{\par
+  console.log(i);\par
+  i++;\par
+\} while (i < 10);\par
+for...in loop: This loop is used to iterate over the properties of an object. It can be used to loop through the properties of any object, including arrays. Here's an example:\par
+javascript\par
+Copy code\par
+const person = \{ name: 'John', age: 30, city: 'New York' \};\par
+for (const prop in person) \{\par
+  console.log(`$\{prop\}: $\{person[prop]\}`);\par
+\}\par
+In addition to these basic looping structures, JavaScript also provides other looping structures such as forEach() and map() for working with arrays, as well as for...of loop for iterating over iterable objects like arrays and strings.\par
+\par
+\b\f0\lang1033 12)\b0\f1\lang9  How can you convert the string of any base to an integer in JavaScript? \ul\b\par
+\f0\lang1033 ANS.\ulnone\b0\f1\lang9 Convert a string to an integer in JavaScript. In JavaScript parseInt () function is used to convert the string to an integer. This function returns an integer of base which is specified in second argument of parseInt () function. parseInt () function returns Nan ( not a number) when the string doesn\rquote t contain number.\par
+\par
+\b\f0\lang1033 13)\b0\f1\lang9 What is the function of the delete operator? \par
+\ul\b\f0\lang1033 ANS.\ulnone\b0\f1\lang9 The delete operator removes a property from an object. If the property's value is an object and there are no more references to the object, the object held by that property is eventually released automatically. Note: The syntax allows a wider range of expressions following the delete operator, but only the above forms lead to meaningful behaviors.\par
+\par
+\b\f0\lang1033 14)\b0\f1\lang9 What are all the types of Pop up boxes available in JavaScript? \ul\par
+\b\f0\lang1033 ANS. \par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\ulnone\b0\f1\lang9 Alert Box An alert box is often used if you want to make sure information comes through to the user. ...\par
+{\pntext\f3\'B7\tab}Confirm Box A confirm box is often used if you want the user to verify or accept something. ...\par
+{\pntext\f3\'B7\tab}Prompt Box A prompt box is often used if you want the user to input a value before entering a page. ...\par
+{\pntext\f3\'B7\tab}Line Breaks ...\par
+
+\pard\sa200\sl276\slmult1\par
+
+\pard\sa200\sl276\slmult1\b\f0\lang1033 15)\b0\f1\lang9 What is the use of Void (0)? \par
+\ul\b\f0\lang1033 ANS.\ulnone\b0\f1\lang9 The javascript:void (0) can be used when we don't want to refresh or load a new page in the browser on clicking a hyperlink. We can use the operand 0 in two ways that are void (0) or void 0. Both of the ways work the same. The JavaScript :void (0) tells the browser to "do nothing" i.e., prevents the browser from reloading or refreshing the page.\par
+\par
+\f0\lang1033 16)\f1\lang9  How can a page be forced to load another page in JavaScript? \ul\par
+\f0\lang1033 ANS.\ulnone\f1\lang9 We can use window.location property inside the script tag to forcefully load another page in Javascript. It is a reference to a Location object that is it represents the current location of the document.\par
+\par
+\b\f0\lang1033 17)\b0\f1\lang9  What are the disadvantages of using innerHTML in JavaScript?\par
+\ul\b\f0\lang1033 ANS.\ulnone\b0 The use of inner HTML in JavaScript has the following disadvantages \f2\u8722?\f0  There is no append support without reparsing the whole innerHTML. This makes changing innerHTML directly very slow. For example, for appending to a html tag.\lang9\par
+}
+ 
